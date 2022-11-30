@@ -1,0 +1,90 @@
+
+/* Class = "UILabel"; text = "missiles:"; ObjectID = "3qr-xK-rAh"; */
+"3qr-xK-rAh.text" = "Снаряды:";
+
+/* Class = "UIButton"; configuration.title = "Coose yoyr boat"; ObjectID = "6RU-M6-zfk"; */
+"6RU-M6-zfk.configuration.title" = "Выбери противников";
+
+/* Class = "UIButton"; normalTitle = "Button"; ObjectID = "6RU-M6-zfk"; */
+"6RU-M6-zfk.normalTitle" = "Button";
+
+/* Class = "UIButton"; normalTitle = "Button"; ObjectID = "778-uv-EXl"; */
+"778-uv-EXl.normalTitle" = "Button";
+
+/* Class = "UIButton"; configuration.title = "Settings"; ObjectID = "C0B-SX-PcD"; */
+"C0B-SX-PcD.configuration.title" = "Настройки";
+
+/* Class = "UIButton"; normalTitle = "Button"; ObjectID = "C0B-SX-PcD"; */
+"C0B-SX-PcD.normalTitle" = "Button";
+
+/* Class = "UIButton"; configuration.title = "->"; ObjectID = "Dab-Zu-Erl"; */
+"Dab-Zu-Erl.configuration.title" = "->";
+
+/* Class = "UIButton"; normalTitle = "Button"; ObjectID = "Dab-Zu-Erl"; */
+"Dab-Zu-Erl.normalTitle" = "Button";
+
+/* Class = "UILabel"; text = "Racer Name:"; ObjectID = "FTP-51-eKn"; */
+"FTP-51-eKn.text" = "Имя гонщика:";
+
+/* Class = "UILabel"; text = "Boat Crush:"; ObjectID = "HpC-Fl-4hF"; */
+"HpC-Fl-4hF.text" = "Подбито лодок:";
+
+/* Class = "UIButton"; configuration.title = "Load Lust race"; ObjectID = "O2k-h0-GYm"; */
+"O2k-h0-GYm.configuration.title" = "Загрузить последние настройки";
+
+/* Class = "UIButton"; normalTitle = "Button"; ObjectID = "O2k-h0-GYm"; */
+"O2k-h0-GYm.normalTitle" = "Button";
+
+/* Class = "UILabel"; text = "you are dead!"; ObjectID = "Pv9-nP-E70"; */
+"Pv9-nP-E70.text" = "Ты разбился!";
+
+/* Class = "UILabel"; text = "Date:"; ObjectID = "QEA-jf-bBV"; */
+"QEA-jf-bBV.text" = "Дата:";
+
+/* Class = "UILabel"; text = "O2 :"; ObjectID = "Qun-dp-5Jv"; */
+"Qun-dp-5Jv.text" = "O2 :";
+
+/* Class = "UIButton"; configuration.title = "->"; ObjectID = "VxI-Yp-N47"; */
+"VxI-Yp-N47.configuration.title" = "->";
+
+/* Class = "UIButton"; normalTitle = "Button"; ObjectID = "VxI-Yp-N47"; */
+"VxI-Yp-N47.normalTitle" = "Button";
+
+/* Class = "UIButton"; normalTitle = "Button"; ObjectID = "XF4-xG-j7n"; */
+"XF4-xG-j7n.normalTitle" = "Button";
+
+/* Class = "UIButton"; configuration.title = "Coose yoyr submarine"; ObjectID = "Zk2-fu-eMv"; */
+"Zk2-fu-eMv.configuration.title" = "Выбери свою подлодку";
+
+/* Class = "UIButton"; normalTitle = "Button"; ObjectID = "Zk2-fu-eMv"; */
+"Zk2-fu-eMv.normalTitle" = "Button";
+
+/* Class = "UIButton"; configuration.title = "Records"; ObjectID = "g0I-9a-5Ih"; */
+"g0I-9a-5Ih.configuration.title" = "Рекорды";
+
+/* Class = "UIButton"; normalTitle = "Button"; ObjectID = "g0I-9a-5Ih"; */
+"g0I-9a-5Ih.normalTitle" = "Button";
+
+/* Class = "UIButton"; configuration.title = "<-"; ObjectID = "gFk-Xj-XHW"; */
+"gFk-Xj-XHW.configuration.title" = "<-";
+
+/* Class = "UIButton"; normalTitle = "Button"; ObjectID = "gFk-Xj-XHW"; */
+"gFk-Xj-XHW.normalTitle" = "Button";
+
+/* Class = "UIButton"; configuration.title = "SAVE"; ObjectID = "jpY-tQ-MkS"; */
+"jpY-tQ-MkS.configuration.title" = "Сохранить";
+
+/* Class = "UIButton"; normalTitle = "Button"; ObjectID = "jpY-tQ-MkS"; */
+"jpY-tQ-MkS.normalTitle" = "Button";
+
+/* Class = "UIButton"; configuration.title = "New Game"; ObjectID = "lIe-9Y-2Oh"; */
+"lIe-9Y-2Oh.configuration.title" = "Новая игра";
+
+/* Class = "UILabel"; text = "choose  difficulty"; ObjectID = "nVv-ng-whI"; */
+"nVv-ng-whI.text" = "Выбери Сложность";
+
+/* Class = "UIButton"; configuration.title = "<-"; ObjectID = "rwS-g4-lkL"; */
+"rwS-g4-lkL.configuration.title" = "<-";
+
+/* Class = "UIButton"; normalTitle = "Button"; ObjectID = "rwS-g4-lkL"; */
+"rwS-g4-lkL.normalTitle" = "Button";
