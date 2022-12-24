@@ -8,7 +8,7 @@
 import UIKit
 
 class SettingsViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource {
-
+    
     
     
     @IBOutlet weak var openSubmarineButtonPlaceHolder: UIButton!
@@ -47,7 +47,7 @@ class SettingsViewController: UIViewController, UIPickerViewDelegate, UIPickerVi
     }
     
     func numberOfComponents(in pickerView: UIPickerView) -> Int {
-        return 1           
+        return 1
     }
     
     func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
@@ -105,20 +105,13 @@ class SettingsViewController: UIViewController, UIPickerViewDelegate, UIPickerVi
     }
     
     @IBAction func saveButtonPrassed(_ sender: UIButton) {
-       
-        
         guard let imageBoat = centerImageLeft.image  else { return }
         guard let imageSubmarine = centerImageRight.image else { return }
         let nameImageBoat = Settings.shared.saveImage(image: imageBoat)
         let nameImageSubmarine = Settings.shared.saveImage(image: imageSubmarine)
-        
         UserDefaults.standard.set(nameImageBoat, forKey: "imageBoat")
         UserDefaults.standard.set(nameImageSubmarine, forKey: "imageSubmarine")
-        
         showAlertSave()
-
-        
- 
     }
     
     
@@ -146,7 +139,6 @@ class SettingsViewController: UIViewController, UIPickerViewDelegate, UIPickerVi
         centerImageLeft.frame.origin.y = 0
         leftView.addSubview(centerImageLeft)
         
-        
         rightImageLeft.frame = CGRect(x:centerImageLeft.frame.origin.x + centerImageLeft.frame.width, y: 0, width: centerImageLeft.frame.width, height: centerImageLeft.frame.height)
         rightImageLeft.isHidden = true
         leftView.addSubview(rightImageLeft)
@@ -159,7 +151,6 @@ class SettingsViewController: UIViewController, UIPickerViewDelegate, UIPickerVi
     }
     
     func moveToRightLeft() {
-        
         if centerImageLeft.image != nil {
             Settings.shared.arrayOfBoatSkins.append(centerImageLeft.image)
             moveRightAll()
@@ -184,7 +175,7 @@ class SettingsViewController: UIViewController, UIPickerViewDelegate, UIPickerVi
                 self.rightImageLeft.isHidden = true
                 
                 self.rightImageLeft.image = Settings.shared.arrayOfBoatSkins.first as? UIImage
-
+                
             }
         }
     }
@@ -275,34 +266,28 @@ class SettingsViewController: UIViewController, UIPickerViewDelegate, UIPickerVi
     @objc func backButtonTapt(sender: UIButton!) {
         UIView.animate(withDuration: 0.3, animations: {
             self.backButton.backgroundColor = .green }) { (_) in
-            self.backButton.backgroundColor = .red
-            self.navigationController?.popToRootViewController(animated: true)
-        }
-        
+                self.backButton.backgroundColor = .red
+                self.navigationController?.popToRootViewController(animated: true)
+            }
     }
     
     func showAlertSave() {
         let alert = UIAlertController(title: "Save".localized(), message: "save your settings".localized(), preferredStyle: .alert)
-         
-        
         let ok = UIAlertAction(title: "ok", style: .default) { _ in
             if let newName = alert.textFields?.first?.text {
                 UserDefaults.standard.set(newName, forKey: "newName")
             }
             let newRacer = SaveClass(nameRacer: UserDefaults.standard.value(forKey: "newName") as? String  ?? "-", submarineSkin: UserDefaults.standard.value(forKey: "imageSubmarine") as? String ?? "0", boatSkin: UserDefaults.standard.value(forKey: "imageBoat") as? String ?? "0", dataRecord: "0")
             newRacer.record = Settings.shared.recordText as? Int ?? 0
-            
             UserDefaults.standard.set(encodeble: newRacer, forKey: "newRacer")
-            
             Settings.shared.arrayUsers.append(newRacer)
-           print(Settings.shared.arrayUsers.count)
+            print(Settings.shared.arrayUsers.count)
             self.navigationController?.popToRootViewController(animated: true)
         }
         alert.addTextField { LoginTF in
             LoginTF.placeholder = "Name"
         }
         alert.addAction(ok)
-        
         present(alert, animated: true, completion: nil)
     }
 }

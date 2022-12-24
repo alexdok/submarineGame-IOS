@@ -1,9 +1,4 @@
-//
-//  GameViewController.swift
-//  DZRacing
-//
-//  Created by алексей ганзицкий on 26.04.2022.
-//Settings.sharedSettings.shared
+
 
 import UIKit
 import CoreMotion
@@ -35,11 +30,11 @@ class GameViewController: UIViewController {
     var timer = Timer()
     
     
-
+    
     
     //MARK: outlets
     
-   
+    
     @IBOutlet weak var backgroundOutlet: UIImageView!
     @IBOutlet weak var downButton: UIButton!
     @IBOutlet weak var upButton: UIButton!
@@ -99,7 +94,7 @@ class GameViewController: UIViewController {
             self.oxyLable.text = "O2: \(self.oxygenTimer.oxygen) %"
         })
     }
-        
+    
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
         
@@ -109,7 +104,7 @@ class GameViewController: UIViewController {
         super.viewWillDisappear(animated)
         Settings.shared.saveRecordsTable()
     }
-
+    
     //MARK: IBactions
     
     @IBAction func pressedButtonUp(_ sender: UIButton) {
@@ -123,16 +118,16 @@ class GameViewController: UIViewController {
     
     //MARK: movemnt & animation func
     
-//    func animationMove(ico: Movement){
-//        switch ico {
-//        case .down:
-//            self.submarineAnimationImage.image = UIImage(named: "субмарин2")
-//        case .up:
-//            self.submarineAnimationImage.image = settings.submarineSkin
-//        case .mid:
-//            self.submarineAnimationImage.image = UIImage(named: "субмарин")
-//        }
-//    }
+    //    func animationMove(ico: Movement){
+    //        switch ico {
+    //        case .down:
+    //            self.submarineAnimationImage.image = UIImage(named: "субмарин2")
+    //        case .up:
+    //            self.submarineAnimationImage.image = settings.submarineSkin
+    //        case .mid:
+    //            self.submarineAnimationImage.image = UIImage(named: "субмарин")
+    //        }
+    //    }
     
     func moveFromMotionMbager() {
         if motionManager.isAccelerometerAvailable {
@@ -145,23 +140,20 @@ class GameViewController: UIViewController {
                     if acceleration.y <= -0.15 {
                         self?.moveDown()
                     }
-                    
                     print("x = " + "\(acceleration.x)")
                     print("y = " + "\(acceleration.y)")
                     print("z = " +  "\(acceleration.z)")
-                    
                 }
             }
         }
     }
-
-        
+    
+    
     func moveDown() {
         if self.submarineAnimationImage.frame.origin.y > self.gameZoneView.bounds.height - self.submarineAnimationImage.bounds.height {
             submarineCrush()
             return
         }
-        
         UIView.animate(withDuration: 0.3) {
             self.submarineAnimationImage.frame.origin.y += 20
         }
@@ -351,20 +343,20 @@ class GameViewController: UIViewController {
     
     func saveRecord() {
         let racer = Settings.shared.arrayUsers.removeLast()
-//        guard let record = Settings.shared.recordText as? Int else { return }
+        //        guard let record = Settings.shared.recordText as? Int else { return }
         if racer.record < crushBoats { racer.record = crushBoats }
         
         
-//        guard let oldRecord = Settings.shared.recordText as? Int else { return }
-//        if crushBoats > oldRecord {
-//            Settings.shared.recordText = crushBoats
-//            UserDefaults.standard.set(crushBoats, forKey: "newRecord")
-            let dateRecord = Date()
-            let formater = DateFormatter()
-            formater.dateFormat = "HH:mm  dd / MMMM / yyyy"
-            let dataRecordFormat = formater.string(from: dateRecord)
-            UserDefaults.standard.set(dataRecordFormat, forKey: "dataRecord")
-//        }
+        //        guard let oldRecord = Settings.shared.recordText as? Int else { return }
+        //        if crushBoats > oldRecord {
+        //            Settings.shared.recordText = crushBoats
+        //            UserDefaults.standard.set(crushBoats, forKey: "newRecord")
+        let dateRecord = Date()
+        let formater = DateFormatter()
+        formater.dateFormat = "HH:mm  dd / MMMM / yyyy"
+        let dataRecordFormat = formater.string(from: dateRecord)
+        UserDefaults.standard.set(dataRecordFormat, forKey: "dataRecord")
+        //        }
         racer.dataRecord = dataRecordFormat
         Settings.shared.arrayUsers.append(racer)
     }
@@ -379,7 +371,7 @@ class GameViewController: UIViewController {
         motionManager.stopAccelerometerUpdates()
     }
     
-
+    
     
     //MARK: Buttons
     
@@ -398,7 +390,7 @@ class GameViewController: UIViewController {
         UIView.animate(withDuration: 0.3, animations: { self.actionButton.backgroundColor = .green }) { (_) in
             self.actionButton.backgroundColor = .cyan
             if self.missilesCount > 0 {
-            self.createMissiles()
+                self.createMissiles()
                 self.missilesCount -= 1
             }
         }
