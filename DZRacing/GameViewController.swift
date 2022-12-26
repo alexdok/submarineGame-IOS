@@ -57,11 +57,6 @@ class GameViewController: UIViewController {
         actionButton.addShadow()
         
         downButton.addShadow()
-        creatObstractionRock()
-        creatObstractionShip()
-        creatObstractionFish()
-        createSubmarine()
-        createBonus()
         oxygenTimer.oxygenTimer()
         createActionButton()
         // load settings
@@ -97,7 +92,15 @@ class GameViewController: UIViewController {
     
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
-        
+
+    }
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        creatObstractionShip()
+        creatObstractionFish()
+        createSubmarine()
+        createBonus()
+        creatObstractionRock()
     }
     
     override func viewWillDisappear(_ animated: Bool) {
@@ -251,8 +254,8 @@ class GameViewController: UIViewController {
     }
     
     func creatObstractionRock() {
-        let endViewX = self.view.bounds.width
-        let endVIewY = self.gameZoneView.frame.origin.y + 20
+        let endViewX = self.gameZoneView.bounds.width
+        let endVIewY = self.gameZoneView.bounds.height - 60
         obstructionImageRock.frame = CGRect(x: endViewX, y: endVIewY, width: 120, height: 60)
         obstructionImageRock.image = UIImage(named: "камень")
         self.gameZoneView.addSubview(obstructionImageRock)
@@ -266,8 +269,8 @@ class GameViewController: UIViewController {
     }
     
     func creatObstractionFish() {
-        let endViewX = self.view.bounds.width + 150
-        let endVIewY = self.gameZoneView.frame.origin.y / 2.5
+        let endViewX = self.gameZoneView.bounds.width + 150
+        let endVIewY = self.gameZoneView.bounds.height / 2 - 40
         obstructionImageFish.frame = CGRect(x: endViewX, y: endVIewY, width: 120, height: 80)
         obstructionImageFish.image = UIImage(named: "рыба")
         obstructionImageFish.contentMode = .scaleAspectFill
@@ -308,6 +311,7 @@ class GameViewController: UIViewController {
         } else if self.missilesView.frame.intersects(self.obstructionImageFish.frame) {
             UIView.animate(withDuration: 0.9) {
                 self.missilesView.removeFromSuperview()
+                self.missilesView.frame.origin.x += self.gameZoneView.bounds.width
                 self.obstructionImageFish.image = UIImage(named: "badabum")
                 self.obstructionImageFish.frame.origin.x += 5
             } completion: { _ in
@@ -319,6 +323,7 @@ class GameViewController: UIViewController {
             self.crushBoats += 1
             UIView.animate(withDuration: 0.5) {
                 self.missilesView.removeFromSuperview()
+                self.missilesView.frame.origin.x += self.gameZoneView.bounds.width
                 self.obstructionImageShip.image = UIImage(named: "badabum")
                 self.obstructionImageShip.frame.origin.x += 5
             } completion: { _ in
