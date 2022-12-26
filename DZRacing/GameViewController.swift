@@ -62,8 +62,6 @@ class GameViewController: UIViewController {
         // load settings
         loadImageBoat()
         loadImageSubmarine()
-        //костыль из-за бага
-        createMissiles()
         missilesView.removeFromSuperview()
         //
         self.backButton.backgroundColor = .red
