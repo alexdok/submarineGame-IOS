@@ -55,8 +55,8 @@ class GameViewController: UIViewController {
         upButton.addShadow()
         backButton.addShadow()
         actionButton.addShadow()
-        
         downButton.addShadow()
+        createSubmarine()
         oxygenTimer.oxygenTimer()
         createActionButton()
         // load settings
@@ -96,7 +96,6 @@ class GameViewController: UIViewController {
         super.viewDidAppear(animated)
         creatObstractionShip()
         creatObstractionFish()
-        createSubmarine()
         createBonus()
         creatObstractionRock()
     }
@@ -254,22 +253,22 @@ class GameViewController: UIViewController {
     func creatObstractionRock() {
         let endViewX = self.gameZoneView.bounds.width
         let endVIewY = self.gameZoneView.bounds.height - 60
-        obstructionImageRock.frame = CGRect(x: endViewX, y: endVIewY, width: 120, height: 60)
+        obstructionImageRock.frame = CGRect(x: endViewX, y: endVIewY, width: 120, height: self.gameZoneView.bounds.height/3)
         obstructionImageRock.image = UIImage(named: "камень")
         self.gameZoneView.addSubview(obstructionImageRock)
     }
     
     func creatObstractionShip() {
         let endViewX = self.view.bounds.width + 300
-        let endVIewY = -self.gameZoneView.frame.origin.y + self.gameZoneView.frame.origin.y/2
-        obstructionImageShip.frame = CGRect(x: endViewX, y: endVIewY, width: 120, height: 80)
+        let endVIewY = -self.gameZoneView.frame.origin.y + self.gameZoneView.bounds.height/3
+        obstructionImageShip.frame = CGRect(x: endViewX, y: endVIewY, width: 120, height: self.gameZoneView.bounds.height/3)
         self.gameZoneView.addSubview(obstructionImageShip)
     }
     
     func creatObstractionFish() {
         let endViewX = self.gameZoneView.bounds.width + 150
-        let endVIewY = self.gameZoneView.bounds.height / 2 - 40
-        obstructionImageFish.frame = CGRect(x: endViewX, y: endVIewY, width: 120, height: 80)
+        let endVIewY = self.gameZoneView.bounds.height / 2 / 2
+        obstructionImageFish.frame = CGRect(x: endViewX, y: endVIewY, width: 120, height: self.gameZoneView.bounds.height/3)
         obstructionImageFish.image = UIImage(named: "рыба")
         obstructionImageFish.contentMode = .scaleAspectFill
         self.gameZoneView.addSubview(obstructionImageFish)
