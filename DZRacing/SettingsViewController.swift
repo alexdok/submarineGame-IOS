@@ -9,8 +9,6 @@ import UIKit
 
 class SettingsViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource {
     
-    
-    
     @IBOutlet weak var openSubmarineButtonPlaceHolder: UIButton!
     @IBOutlet weak var openBoatButtonPlaceHolder: UIButton!
     @IBOutlet weak var leftRightButton: UIButton!
@@ -18,17 +16,13 @@ class SettingsViewController: UIViewController, UIPickerViewDelegate, UIPickerVi
     @IBOutlet weak var pickerDifficulty: UIPickerView!
     @IBOutlet weak var leftView: UIView!
     @IBOutlet weak var rightView: UIView!
-    
-    
     @IBOutlet weak var rightLeftButton: UIButton!
     @IBOutlet weak var rightRightButton: UIButton!
-    
     
     let backButton = UIButton(frame: CGRect(x: 20, y: 40, width: 80, height: 40))
     let centerImageLeft = UIImageView()
     let leftImageLeft = UIImageView()
     let rightImageLeft = UIImageView()
-    
     let centerImageRight = UIImageView()
     let leftImageRight = UIImageView()
     let rightImageRight = UIImageView()
@@ -41,6 +35,7 @@ class SettingsViewController: UIViewController, UIPickerViewDelegate, UIPickerVi
         if Settings.shared.difficultArray.isEmpty { return }
         Settings.shared.difficultRow = Settings.shared.difficultArray.first!
     }
+    
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         createImages()
@@ -53,9 +48,11 @@ class SettingsViewController: UIViewController, UIPickerViewDelegate, UIPickerVi
     func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
         return Settings.shared.difficultArray.count
     }
+    
     func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
         Settings.shared.difficultArray[row]
     }
+    
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
         Settings.shared.difficultRow = Settings.shared.difficultArray[row]
     }
@@ -75,7 +72,6 @@ class SettingsViewController: UIViewController, UIPickerViewDelegate, UIPickerVi
         leftRightButton.isHidden = false
         openBoatButtonPlaceHolder.isHidden = true
     }
-    
     
     @IBAction func openBoatSelectorButton(_ sender: UIButton) {
         moveToRightLeft()
@@ -114,19 +110,15 @@ class SettingsViewController: UIViewController, UIPickerViewDelegate, UIPickerVi
         showAlertSave()
     }
     
-    
     func createRigtViewObj() {
         centerImageRight.image = nil
         centerImageRight.frame = CGRect(x: 0, y: 0, width: rightView.frame.width/3, height: rightView.frame.height/3)
-        
         centerImageRight.frame.origin.x = rightView.frame.width/2 - centerImageRight.frame.width/2
         centerImageRight.frame.origin.y = 0
         rightView.addSubview(centerImageRight)
-        
         rightImageRight.isHidden = true
         rightImageRight.frame = CGRect(x: centerImageRight.frame.origin.x + centerImageRight.frame.width, y: 0, width: centerImageRight.frame.width, height: centerImageRight.frame.height)
         rightView.addSubview(rightImageRight)
-        
         leftImageRight.isHidden = true
         leftImageRight.frame = CGRect(x: centerImageRight.frame.origin.x - centerImageRight.frame.width, y: 0, width: centerImageRight.frame.width, height: centerImageRight.frame.height)
         rightView.addSubview(leftImageRight)
@@ -251,14 +243,11 @@ class SettingsViewController: UIViewController, UIPickerViewDelegate, UIPickerVi
         }
     }
     
-    
-    
     func createButtonBack() {
         self.backButton.backgroundColor = .red
         self.backButton.setTitle("back".localized(), for: .normal)
         self.backButton.tintColor = .green
         self.backButton.layer.cornerRadius = 20
-        
         backButton.addTarget(self, action: #selector(backButtonTapt), for: .touchUpInside)
         self.view.addSubview(backButton)
     }

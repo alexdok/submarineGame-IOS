@@ -11,8 +11,8 @@ enum Movement {
 }
 
 class GameViewController: UIViewController {
-    //MARK: let/var
     
+    //MARK: let/var
     let motionManager = CMMotionManager()
     let backButton = UIButton(frame: CGRect(x: 10, y: 10, width: 70, height: 30))
     let actionButton = UIButton()
@@ -25,16 +25,10 @@ class GameViewController: UIViewController {
     let missilesView = UIImageView()
     let submarineAnimationImage = UIImageView()
     var crushBoats = 0
-    
     let oxygenTimer = OxyTimer()
     var timer = Timer()
     
-    
-    
-    
     //MARK: outlets
-    
-    
     @IBOutlet weak var backgroundOutlet: UIImageView!
     @IBOutlet weak var downButton: UIButton!
     @IBOutlet weak var upButton: UIButton!
@@ -49,7 +43,6 @@ class GameViewController: UIViewController {
         if Settings.shared.arrayUsers.isEmpty {
             Settings.shared.createDefaultUser()
         }
-        
         backgroundOutlet.addParalaxEffect()
         moveFromMotionMbager()
         upButton.addShadow()
@@ -68,12 +61,9 @@ class GameViewController: UIViewController {
         self.backButton.setTitle("back".localized(), for: .normal)
         self.backButton.tintColor = .green
         self.backButton.layer.cornerRadius = backButton.frame.height / 2
-        
         backButton.addTarget(self, action: #selector(backButtonTapt), for: .touchUpInside)
         self.view.addSubview(backButton)
-        
         self.missilesCountLable.textColor = .blue
-        
         timer = Timer.scheduledTimer(withTimeInterval: Settings.shared.loadDifficult(), repeats: true, block: { _ in
             self.moveToleftObstructions(image: self.obstructionImageRock)
             self.moveToleftObstructions(image: self.obstructionImageShip)
@@ -90,8 +80,8 @@ class GameViewController: UIViewController {
     
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
-
     }
+    
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         creatObstractionShip()
@@ -106,18 +96,15 @@ class GameViewController: UIViewController {
     }
     
     //MARK: IBactions
-    
     @IBAction func pressedButtonUp(_ sender: UIButton) {
         moveUp()
     }
     
-    
     @IBAction func pressedButtonDown(_ sender: UIButton) {
         moveDown()
     }
-    
+
     //MARK: movemnt & animation func
-    
     //    func animationMove(ico: Movement){
     //        switch ico {
     //        case .down:
@@ -147,7 +134,6 @@ class GameViewController: UIViewController {
             }
         }
     }
-    
     
     func moveDown() {
         if self.submarineAnimationImage.frame.origin.y > self.gameZoneView.bounds.height - self.submarineAnimationImage.bounds.height {
@@ -187,10 +173,9 @@ class GameViewController: UIViewController {
         }
     }
     
-    
     func moveToleftObstructions(image: UIImageView) {
         switch image {
-        case obstructionImageRock :
+        case obstructionImageRock:
             if image.frame.origin.x > self.gameZoneView.frame.origin.x - image.bounds.width  {
                 UIView.animate(withDuration: 0.3) {
                     image.frame.origin.x -= 2
@@ -198,7 +183,7 @@ class GameViewController: UIViewController {
             } else {
                 image.frame.origin.x = self.view.bounds.width
             }
-        case obstructionImageShip :
+        case obstructionImageShip:
             if image.frame.origin.x > self.gameZoneView.frame.origin.x - image.bounds.width  {
                 UIView.animate(withDuration: 0.3) {
                     image.frame.origin.x -= 12
@@ -223,11 +208,11 @@ class GameViewController: UIViewController {
             } else {
                 missilesView.removeFromSuperview()
             }
-        case bonusView :
-            if self.submarineAnimationImage.frame.intersects(self.bonusView.frame)  {
+        case bonusView:
+            if self.submarineAnimationImage.frame.intersects(self.bonusView.frame) {
                 image.removeFromSuperview()
                 createBonus()
-            } else if image.frame.origin.x > self.gameZoneView.frame.origin.x - image.bounds.width  {
+            } else if image.frame.origin.x > self.gameZoneView.frame.origin.x - image.bounds.width {
                 UIView.animate(withDuration: 0.3) {
                     image.frame.origin.x -= CGFloat.random(in: 0...20)
                 }
@@ -235,16 +220,14 @@ class GameViewController: UIViewController {
                 image.frame.origin.x = self.view.bounds.width
                 image.frame.origin.y = self.gameZoneView.frame.origin.y / CGFloat.random(in: 1...4)
             }
-        default : return
+        default: return
         }
     }
     
     //MARK: objects
-    
     func createSubmarine() {
         let x = self.gameZoneView.frame.origin.x
         let y = self.gameZoneView.frame.origin.y/2
-        
         submarineAnimationImage.frame = CGRect(x: x, y: y, width: 66, height: 40)
         submarineAnimationImage.contentMode = .scaleAspectFit
         self.gameZoneView.addSubview(submarineAnimationImage)
@@ -276,7 +259,6 @@ class GameViewController: UIViewController {
     
     func createBonus() {
         let originYMax = self.gameZoneView.frame.origin.y + self.gameZoneView.frame.height - 40
-        
         let endViewX = self.view.bounds.width * 2
         let endVIewY = CGFloat.random(in: 1...originYMax)
         bonusView.frame = CGRect(x: endViewX, y: endVIewY, width: 40, height: 40)
@@ -293,7 +275,6 @@ class GameViewController: UIViewController {
     }
     
     //MARK: events
-    
     func crushObstraction() {
         if self.missilesView.frame.intersects(self.obstructionImageRock.frame) {
             UIView.animate(withDuration: 0.5) {
@@ -337,7 +318,7 @@ class GameViewController: UIViewController {
         }
     }
     
-    func submarineBonusUp(){
+    func submarineBonusUp() {
         if self.submarineAnimationImage.frame.intersects(self.bonusView.frame) {
             missilesCount += 1
         }
@@ -347,8 +328,6 @@ class GameViewController: UIViewController {
         let racer = Settings.shared.arrayUsers.removeLast()
         //        guard let record = Settings.shared.recordText as? Int else { return }
         if racer.record < crushBoats { racer.record = crushBoats }
-        
-        
         //        guard let oldRecord = Settings.shared.recordText as? Int else { return }
         //        if crushBoats > oldRecord {
         //            Settings.shared.recordText = crushBoats
@@ -373,10 +352,7 @@ class GameViewController: UIViewController {
         motionManager.stopAccelerometerUpdates()
     }
     
-    
-    
     //MARK: Buttons
-    
     func createActionButton() {
         actionButton.frame = CGRect(x: self.view.bounds.width - 80, y: self.view.frame.minY + 30, width: 60, height: 60)
         actionButton.layer.cornerRadius = actionButton.frame.height/2
@@ -397,7 +373,6 @@ class GameViewController: UIViewController {
             }
         }
     }
-    
     
     @objc func backButtonTapt(sender: UIButton!) {
         UIView.animate(withDuration: 0.3, animations: { self.backButton.backgroundColor = .green }) { (_) in

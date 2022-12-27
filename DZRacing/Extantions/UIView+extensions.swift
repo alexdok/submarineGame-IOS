@@ -20,21 +20,17 @@ extension UIView {
         layer.shadowOpacity = 0.5
         layer.shadowOffset = CGSize(width: 10, height: 10)
         layer.shadowRadius = 5
-        
         layer.shadowPath = UIBezierPath(rect: bounds).cgPath
-//        layer.shadowPath = UIBezierPath(roundedRect: bounds, cornerRadius: bounds.width/2).cgPath
+        //        layer.shadowPath = UIBezierPath(roundedRect: bounds, cornerRadius: bounds.width/2).cgPath
         layer.shouldRasterize = true
     }
     
     func addGradient() {
         let gradient = CAGradientLayer()
-        
         gradient.colors = [ UIColor.red.cgColor, UIColor.yellow.cgColor, UIColor.blue.cgColor]
         gradient.opacity = 0.6
-        
         gradient.startPoint = CGPoint(x: 0.0, y: 0.0)
         gradient.endPoint = CGPoint(x: 1.0, y: 1.0)
-        
         gradient.frame = self.bounds
         self.layer.insertSublayer(gradient, at: 0)
     }
@@ -50,6 +46,5 @@ extension UIView {
         group.motionEffects = [horizontal, vertical]
         addMotionEffect(group)
     }
-    
 }
 

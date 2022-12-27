@@ -7,13 +7,14 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		903F21E928D74D1F00D67F48 /* UserDefaults+extansioms.swift in Sources */ = {isa = PBXBuildFile; fileRef = 903F21E828D74D1F00D67F48 /* UserDefaults+extansioms.swift */; };
+		903F21E928D74D1F00D67F48 /* UserDefaults+extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 903F21E828D74D1F00D67F48 /* UserDefaults+extensions.swift */; };
 		904F596E28940F6800A2B6C7 /* Settings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 904F596D28940F6800A2B6C7 /* Settings.swift */; };
 		90AB024B289A9D4E00FDCD2E /* SaveClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90AB024A289A9D4E00FDCD2E /* SaveClass.swift */; };
-		90CB4AC72885776F0009C40B /* UIView+extantons.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90CB4AC62885776F0009C40B /* UIView+extantons.swift */; };
+		90BC6AC0295B089D0082AB0D /* RecordViewController+extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90BC6ABF295B089D0082AB0D /* RecordViewController+extensions.swift */; };
+		90CB4AC72885776F0009C40B /* UIView+extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90CB4AC62885776F0009C40B /* UIView+extensions.swift */; };
 		90D38D69285DDB3F00D37620 /* OxyTimer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90D38D68285DDB3F00D37620 /* OxyTimer.swift */; };
 		90DACF38292E5A440016E591 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 90DACF3A292E5A440016E591 /* Localizable.strings */; };
-		90DACF3D292E5A6B0016E591 /* String+extansions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90DACF3C292E5A6B0016E591 /* String+extansions.swift */; };
+		90DACF3D292E5A6B0016E591 /* String+extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90DACF3C292E5A6B0016E591 /* String+extensions.swift */; };
 		90E1514028D768010082D053 /* RecordCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90E1513F28D768010082D053 /* RecordCell.swift */; };
 		90F282012818004A00290743 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90F282002818004A00290743 /* AppDelegate.swift */; };
 		90F282052818004A00290743 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90F282042818004A00290743 /* ViewController.swift */; };
@@ -24,20 +25,21 @@
 		90F282172818346D00290743 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90F282162818346D00290743 /* SettingsViewController.swift */; };
 		90F282192818349900290743 /* RecordsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90F282182818349900290743 /* RecordsViewController.swift */; };
 		90F975052889927200C4E34C /* [SuperSliv.biz] GreatVibes-Regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = 90F975042889927200C4E34C /* [SuperSliv.biz] GreatVibes-Regular.otf */; };
-		90F975072889986700C4E34C /* Collection+extansions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90F975062889986700C4E34C /* Collection+extansions.swift */; };
+		90F975072889986700C4E34C /* Collection+extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90F975062889986700C4E34C /* Collection+extensions.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		903F21E828D74D1F00D67F48 /* UserDefaults+extansioms.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UserDefaults+extansioms.swift"; sourceTree = "<group>"; };
+		903F21E828D74D1F00D67F48 /* UserDefaults+extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UserDefaults+extensions.swift"; sourceTree = "<group>"; };
 		904F596D28940F6800A2B6C7 /* Settings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Settings.swift; sourceTree = "<group>"; };
 		90AB024A289A9D4E00FDCD2E /* SaveClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SaveClass.swift; sourceTree = "<group>"; };
-		90CB4AC62885776F0009C40B /* UIView+extantons.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+extantons.swift"; sourceTree = "<group>"; };
+		90BC6ABF295B089D0082AB0D /* RecordViewController+extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "RecordViewController+extensions.swift"; sourceTree = "<group>"; };
+		90CB4AC62885776F0009C40B /* UIView+extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+extensions.swift"; sourceTree = "<group>"; };
 		90D38D68285DDB3F00D37620 /* OxyTimer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OxyTimer.swift; sourceTree = "<group>"; };
 		90DACF34292E57BB0016E591 /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/Main.strings; sourceTree = "<group>"; };
 		90DACF35292E57BB0016E591 /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
 		90DACF39292E5A440016E591 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		90DACF3B292E5A490016E591 /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/Localizable.strings; sourceTree = "<group>"; };
-		90DACF3C292E5A6B0016E591 /* String+extansions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+extansions.swift"; sourceTree = "<group>"; };
+		90DACF3C292E5A6B0016E591 /* String+extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+extensions.swift"; sourceTree = "<group>"; };
 		90E1513F28D768010082D053 /* RecordCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecordCell.swift; sourceTree = "<group>"; };
 		90F281FD2818004A00290743 /* DZRacing.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DZRacing.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		90F282002818004A00290743 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -50,7 +52,7 @@
 		90F282162818346D00290743 /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
 		90F282182818349900290743 /* RecordsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecordsViewController.swift; sourceTree = "<group>"; };
 		90F975042889927200C4E34C /* [SuperSliv.biz] GreatVibes-Regular.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "[SuperSliv.biz] GreatVibes-Regular.otf"; sourceTree = "<group>"; };
-		90F975062889986700C4E34C /* Collection+extansions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Collection+extansions.swift"; sourceTree = "<group>"; };
+		90F975062889986700C4E34C /* Collection+extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Collection+extensions.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -67,10 +69,11 @@
 		90CB4AC52885774E0009C40B /* Extantions */ = {
 			isa = PBXGroup;
 			children = (
-				90F975062889986700C4E34C /* Collection+extansions.swift */,
-				90CB4AC62885776F0009C40B /* UIView+extantons.swift */,
-				903F21E828D74D1F00D67F48 /* UserDefaults+extansioms.swift */,
-				90DACF3C292E5A6B0016E591 /* String+extansions.swift */,
+				90BC6ABF295B089D0082AB0D /* RecordViewController+extensions.swift */,
+				90F975062889986700C4E34C /* Collection+extensions.swift */,
+				90CB4AC62885776F0009C40B /* UIView+extensions.swift */,
+				903F21E828D74D1F00D67F48 /* UserDefaults+extensions.swift */,
+				90DACF3C292E5A6B0016E591 /* String+extensions.swift */,
 			);
 			path = Extantions;
 			sourceTree = "<group>";
@@ -205,16 +208,17 @@
 			buildActionMask = 2147483647;
 			files = (
 				90F282052818004A00290743 /* ViewController.swift in Sources */,
-				903F21E928D74D1F00D67F48 /* UserDefaults+extansioms.swift in Sources */,
+				903F21E928D74D1F00D67F48 /* UserDefaults+extensions.swift in Sources */,
 				90AB024B289A9D4E00FDCD2E /* SaveClass.swift in Sources */,
-				90F975072889986700C4E34C /* Collection+extansions.swift in Sources */,
+				90F975072889986700C4E34C /* Collection+extensions.swift in Sources */,
 				90F282152818342700290743 /* GameViewController.swift in Sources */,
 				90F282012818004A00290743 /* AppDelegate.swift in Sources */,
 				90F282172818346D00290743 /* SettingsViewController.swift in Sources */,
-				90CB4AC72885776F0009C40B /* UIView+extantons.swift in Sources */,
+				90BC6AC0295B089D0082AB0D /* RecordViewController+extensions.swift in Sources */,
+				90CB4AC72885776F0009C40B /* UIView+extensions.swift in Sources */,
 				904F596E28940F6800A2B6C7 /* Settings.swift in Sources */,
 				90D38D69285DDB3F00D37620 /* OxyTimer.swift in Sources */,
-				90DACF3D292E5A6B0016E591 /* String+extansions.swift in Sources */,
+				90DACF3D292E5A6B0016E591 /* String+extensions.swift in Sources */,
 				90E1514028D768010082D053 /* RecordCell.swift in Sources */,
 				90F282192818349900290743 /* RecordsViewController.swift in Sources */,
 			);

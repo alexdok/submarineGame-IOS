@@ -9,6 +9,7 @@ import Foundation
 import UIKit
 
 class OxyTimer {
+    
     var oxygen = 100
     var timer = Timer()
     
@@ -17,8 +18,5 @@ class OxyTimer {
             self.oxygen -= 1
         }
         timer.fire()
-
     }
-    
-    
 }
